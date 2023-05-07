@@ -1,0 +1,21 @@
+<div id='projects' class="container project-cont">
+    <h2 class='ggt linearp text-center'>My Projects</h2>
+    {% for project in projects %}
+    <div class="row my-5 {% if project.display_image_left %}flex-row{% else %}flex-row-reverse{% endif %}">
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h3 class='h3'>{{ project.title }}</h3>
+        <p class='pd'>{{ project.description }}</p>
+        <div class="d-flex btss">
+          <a href="#" class="vb btn btn-primary me-2">View Case Study<i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="db btn btn-primary">Download App <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="imgcont col-md-6">
+        <img src="{{ project.image.url }}" class=" img-fluid {% if project.display_image_left %}order-1{% else %}order-2{% endif %} zoom-in" alt="{{ project.title }}">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+
+  

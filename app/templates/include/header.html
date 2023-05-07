@@ -1,0 +1,53 @@
+{% load static %}
+{% if request.path == '/about/' %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-custom bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-auto" href="../">NASER</a>
+    </div>
+</nav>
+{% else %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-custom bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#">NASER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto = margin start auto -->
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services" >My Services</a>
+          </li>
+          <li class="nav-item custom">
+            <a class="nav-link cc" href="#contact">Get in touch<img class="arroww" src="{% static 'icons\arrow-down-right.svg' %}" alt="My Image"></a>
+        </ul>
+      </div>
+    </div>
+</nav>
+{% endif %}
+<script>
+  const link = document.querySelector('.nav-link[href="#services"]');
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // prevent the default link behavior
+    const offset = 230; // set the offset value
+    const elementId = this.getAttribute('href').substring(1); // get the target element id
+    const element = document.getElementById(elementId); // get the target element
+    const offsetTop = element.offsetTop - offset; // calculate the top offset
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' }); // scroll to the target element
+  });
+const projectLink = document.querySelector('.nav-link[href="#projects"]');
+projectLink.addEventListener('click', function(event) {
+  event.preventDefault(); // prevent the default link behavior
+  const offset = 50; // set the offset value
+  const elementId = this.getAttribute('href').substring(1); // get the target element id
+  const element = document.getElementById(elementId); // get the target element
+  const offsetTop = element.offsetTop - offset; // calculate the top offset
+  window.scrollTo({ top: offsetTop, behavior: 'smooth' }); // scroll to the target element
+});
+
+  </script>

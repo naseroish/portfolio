@@ -1,0 +1,46 @@
+{%load static%}
+<!-- Hero section -->
+
+<div class="gg">
+  <div class="icon icon-wrapper">
+    <img src={% static 'icons\icon1.png' %} alt="Icon 1">
+  </div>
+
+  <div class="icon icon-wrapper">
+    <img src={% static 'icons\icon2.png' %} alt="Icon 2">
+  </div>
+
+  <div class="icon icon-wrapper">
+    <img src={% static 'icons\icon3.png' %} alt="Icon 3">
+  </div>
+
+  <div class="icon icon-wrapper">
+    <img src={% static 'icons\icon4.png' %} alt="Icon 4">
+  </div>
+  <div class="image-wrapper">
+    <img src={% static 'icons\your-image.png' %} alt="Your Image">
+  </div>
+</div>
+
+<div class="container">
+    <div class="row ">
+      <div class="col-md-12 text-center ">
+        <h1 class="h1c">Hey,I'm Naser.</h1>
+        <h2 class="h2c mt-3">A Product Designer with over 5 years of experience.</h2>
+        <p class="pc mt-2">As a product designer, I identify problems, research user needs, develop solutions, iterate on designs, and deliver a product that meets users' needs.</p>
+        <a href="#projects" class="btn btn-primary mt-4">See my works<img class="arrow-light" src="{% static 'icons\arrow-down-right.svg' %}" alt="My Image"></a>
+      </div>
+    </div>
+  </div>
+<script>  
+  const button = document.querySelector('.btn[href="#projects"]');
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    const offset = 50;
+    const elementId = this.getAttribute('href').substring(1);
+    const element = document.getElementById(elementId);
+    const offsetTop = element.offsetTop - offset;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  });
+</script>
+  
